@@ -6,7 +6,6 @@ class BaseView extends Component {
 	}
 
 	render() {
-		console.log("instanciado en la vista");
 		return(
 			this.props.children
 		);

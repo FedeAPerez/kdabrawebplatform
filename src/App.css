@@ -1,5 +1,54 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .kdabra-app-container {
   text-align: center;
+  margin: 1em auto;
+  width: 90%;
+  
+}
+header {
+  width: 90%;
+  margin: 1em auto;
+  text-align: center;
+  
+}
+.kdabra-app-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.kdabra-app-description {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+}
+.kdabra-app-description-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.kdabra-app-button-container {
+  width: 90%;
+  display: block;
   margin: 0 auto;
-  width: 80%;
+}
+
+.kdabra-app-input {
+  display: block;
+}
+
+.kdabra-app-submit {
+  margin: 0.9em auto;
+}
+@media only screen and (min-width: 900px) 
+{
+  .kdabra-app-button-container {
+    display: inline-block;
+    margin: 1em auto;
+  }
 }
