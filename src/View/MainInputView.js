@@ -25,6 +25,7 @@ class MainInputView extends BaseView {
 							hintText="Nombre"
 							floatingLabelText="Nombre"
 							className="kdabra-app-input"
+							fullWidth={true}
 							/>
 							</div>
 
@@ -33,6 +34,7 @@ class MainInputView extends BaseView {
 								hintText="Mail"
 								floatingLabelText="Mail"
 								className="kdabra-app-input"
+								fullWidth={true}
 								/>
 						</div>
 
