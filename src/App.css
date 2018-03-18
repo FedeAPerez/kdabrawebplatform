@@ -49,8 +49,8 @@ header {
 {
   .kdabra-app-button-container {
     display: inline-block;
-    margin: 1em auto;
-    width: 50%
+    margin: 0.5em 2em;
+    width: 40%
   }
   .kdabra-app-input {
     display: inline-block;
