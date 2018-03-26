@@ -1,3 +1,6 @@
+/* *
+ * ESTRUCTURA GENERAL
+ * */
 html, body {
   margin: 0;
   padding: 0;
@@ -6,45 +9,59 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+main {
+  width: 768px;
+  margin: 0 auto;
+
+  height: 100%;
+}
+
+/* CONTAINER DE APP
+*/
 .kdabra-app-container {
   text-align: center;
   margin: 1em auto;
   width: 90%;
-  
+  margin-top: 0;
 }
+
+
 header {
   width: 90%;
   margin: 1em auto;
   text-align: center;
-  
+  margin-top: 0em;
 }
+
+
 .kdabra-app-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  margin-top: 0em;
+  padding-top: 1em;
+  font-size: 32px;
 }
 
-.kdabra-app-description {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-}
-.kdabra-app-description-title {
+.kdabra-app-subtitle {
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  font-weight: 300;
+  font-size: 24px;
+  margin-top: 0em;
+  color: #8d847f;
+}
+.kdabra-app-container {
+  background-color: #f9f9f9;
 }
 
-.kdabra-app-button-container {
-  width: 90%;
+.kdabra-app-response-container {
+  background-color: white;
+  padding-top: 10px;
   display: block;
   margin: 0 auto;
 }
 
-.kdabra-app-input {
-  display: block;
-}
 
-.kdabra-app-submit {
-  margin: 0.9em auto;
-}
 @media only screen and (min-width: 900px) 
 {
   .kdabra-app-button-container {
@@ -52,7 +69,136 @@ header {
     margin: 0.5em 2em;
     width: 40%
   }
-  .kdabra-app-input {
-    display: inline-block;
-  }
 }
+
+.message {
+  display: inline-block;
+  padding: 1em;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  margin: 1em;
+  background-color: white;
+}
+.message .kdabra {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+.message b {
+  font-weight: 500;
+}
+
+.message h1 {
+  font-family: 'Montserrat';
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-align: left;
+  color: #33281a;
+  margin: 0.9em 0em;
+ }
+ .message h2 {
+  font-family: 'Montserrat';
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: left;
+  color: #33281a;
+ }
+
+ .message h3 {
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8d847f;
+ }
+
+ .right p {
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+ }
+
+ .left {
+  padding: 0em 2.3em;
+  float: left;
+  text-align: left;
+  font-family: 'Rubik';
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #33281a;
+ }  
+
+ .left-lvl3 {
+  width: 391.8px;
+  height: 160px;
+  padding: 1em 2.3em 0em 2.3em;
+ }
+ .left-lvl3 p {
+   color: #8d847f;
+ }
+
+ .left-lvl3-solo {
+  width: 391.8px;
+  height: 104px;
+  padding: 1em 2.3em 2em 2.3em;
+ }
+
+ p b{
+  font-weight: 500;
+ }
+
+ .right {
+  float: right;
+  width: 8.5em;
+  height: 3em;
+  text-align: center;
+  border-radius: 2px;
+  padding: 0em 1em;
+  background-color: #ff9966;
+  margin-left: 50%;
+ }
+ .selection-item {
+  margin: 1em;
+ }
+
+ .masc-gender {
+  background-color:red;
+ }
+
+
+  .clear {
+  clear:both;
+ }
+
+  .big-button {
+ 	font-family: 'Rubik';
+ 	font-size: 16px;
+ 	font-weight: 500;
+ 	font-style: normal;
+ 	font-stretch: normal;
+ 	line-height: normal;
+ 	letter-spacing: normal;
+ 	text-align: center;
+ 	color: #ffffff;
+ }
