@@ -193,21 +193,6 @@ header {
  	color: #ffffff;
  }
 
-/* *
- * MOBILE KDABRA CHAT
- * */
-
-
-@media only screen and (max-width: 768px) 
-{
-  main {
-    width: 80%;
-    margin: 0 auto;
-  
-    height: 100%;
-  }
-}
-
 
 .selector {
   cursor: pointer;
@@ -239,3 +224,21 @@ header {
 	color: #ff9966;
 	border: solid 2px #f3f3f3;
 }
+
+
+
+/* *
+ * MOBILE KDABRA CHAT
+ * */
+
+
+ @media only screen and (max-width: 768px) 
+ {
+   main {
+     width: 100%;
+     margin: 0 auto;
+   
+     height: 100%;
+   }
+ }
+ 
