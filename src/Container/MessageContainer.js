@@ -4,7 +4,9 @@ import MessageComponent from '../Component/message-component'
 export default class MessageContainer extends Component {
     constructor(props) {
         super(props);
+
     }
+
 
     render() {
         return(

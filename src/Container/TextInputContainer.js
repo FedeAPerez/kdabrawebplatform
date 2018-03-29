@@ -14,21 +14,21 @@ export default class TextInputContainer extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-	/*componentDidMount() {
+	componentDidMount() {
 		if(this.props.principal)
 			this.focusElement.focus();
-	}*/
+	}
 
 
     handleSubmit() {
-		if(this.props.closeInput) {
-            var tags = [];
-            tags.push({
-                tag: this.props.responseExpected.id_tag,
-                value: this.state.value
-            });
-            this.props.closeInput(this.state.value, this.state.value, tags);
-        }
+            if(this.props.closeInput) {
+                var tags = [];
+                tags.push({
+                    tag: this.props.responseExpected.id_tag,
+                    value: this.state.value
+                });
+                this.props.closeInput(this.state.value, this.state.value, tags);
+            }
 	}
 
     handleChange = (e) => {        
@@ -66,7 +66,7 @@ export default class TextInputContainer extends Component {
                     floatingLabelText= { this.props.responseExpected.label }
                     onChange={ this.handleChange }
                     value={this.state.value}
-                    //ref={ (element) => { ( this.props.principal == true ) ? this.focusElement = element : '' }}
+                    ref={ (element) => { ( this.props.principal == true ) ? this.focusElement = element : '' }}
                 />
 
                 <FlatButton 

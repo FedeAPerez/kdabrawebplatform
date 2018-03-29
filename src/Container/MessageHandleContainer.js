@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IconButton from 'material-ui/IconButton';
-import ActionInput from 'material-ui/svg-icons/action/input';
+import MultipleSelectionContainer from './MultipleSelectionContainer';
 import BigButtonContainer from './BigButtonContainer';
 import TextInputContainer from './TextInputContainer';
 
@@ -27,6 +27,15 @@ export default class MessageHandleContainer extends Component {
             case 'big-button':
                 return (
                         <BigButtonContainer
+                            responseExpected={this.props.responseExpected}
+                            onClick={this.handleSubmit}
+                        />
+                );
+                break;
+            case 'multiple-selector':
+                return (
+                        
+                        <MultipleSelectionContainer
                             responseExpected={this.props.responseExpected}
                             onClick={this.handleSubmit}
                         />

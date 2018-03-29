@@ -37,10 +37,25 @@ export class FlowService {
 				'id_message':'3',
 				'sender':'kdabra',
 				'message_title':'<h2>{{name}}, vamos a generar tu ChatBot.</h2>',
-				'message':'Antes de eso nos gustaría contarte un poco más de <span class="kdabra">KDABRA</span>. <br />Te voy a contar todo lo que tenemos para vos.',
+				'message':'Antes de eso nos gustaría contarte un poco más de <span class="kdabra">KDABRA</span>. <br />¿Te parece bien?',
 				'type':'text',
 				'class_used':'left left-lvl3',
-				'next_message':'4'
+				'response_expected': {
+					'type_response': 'multiple-selector',
+					'options': [
+						{
+							'label':'Sí',
+							'theme':'default',
+							'value':'Sí'
+						},
+						{
+							'label':'No, pero Sí',
+							'theme':'secondary',
+							'value':'No, pero Sí'
+						}
+					]
+					
+				}
 			},
 			{
 				'id_message':'4',
@@ -88,8 +103,8 @@ export class FlowService {
 				'id_message':'8',
 				'sender':'kdabra',
 				'message_title':'<h2>¡Perfecto!</h2>',
-				'message':'Ya podés ver tu bot en {{link_bot}}',
-				'class_used':'left left-lvl3',
+				'message':'Ya podés ver tu bot en {{link_bot}}<br />',
+				'class_used':'left left-lvl3'
 			}
 		]
 		var messageToReturn = messages[current_message || 0];

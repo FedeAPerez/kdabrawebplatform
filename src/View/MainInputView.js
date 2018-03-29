@@ -50,8 +50,6 @@ class MainInputView extends Component {
 
 
 	getNextMessage(current_msg, vals) {
-		var formInfo = [];
-		
         var m = FlowService.GetNextMessage(current_msg || this.getCurrentMessage(), vals);
         this.state.messageList.push(m);
 		this.setState(this.state);
