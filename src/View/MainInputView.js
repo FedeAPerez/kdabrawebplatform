@@ -14,7 +14,7 @@ class MainInputView extends BaseView {
 					'id_message':'1',
 					'sender':'kdabra',
 					'message_title':'<h1>¡Hola!</h1>',
-					'message':'<span class="kdabra">KDABRA</span> es la herramienta que necesitás para mejorar la comunicación con tus clientes usando Messenger. Dale a <b>empezar</b> y fijate lo que te podemos ofrecer.',
+					'message':'<span class="kdabra">KDABRA</span> es la herramienta 100% interactiva que utiliza mensajería para brindar la mejor experiencia a tus usuarios &#x1F60D. Dale a <b>empezar</b> y fijate lo que te podemos ofrecer.',
 					'type':'text',
 					'class_used':'left',
 					'response_expected': {
@@ -80,8 +80,8 @@ class MainInputView extends BaseView {
 				{
 					'id_message':'7',
 					'sender':'kdabra',
-					'message_title':'<h2>Mil millones</h2>',
-					'message':'Esa es la cantidad de personas que tiene Messenger en su celular &#x1F632, por eso creemos que es vital darte un ChatBot en cualquiera de nuestros planes.',
+					'message_title':'<h2>Tu propio bot &#x1F4BB</h2>',
+					'message':'Vas a tener tu ChatBot completamente en nuestra web &#x1F632, al finalizar está conversación vas a poder compartir a tus clientes un link www.gokdabra.com/nombre_de_empresa.',
 					'type':'text',
 					'class_used':'left left-lvl3',
 				},
@@ -94,7 +94,7 @@ class MainInputView extends BaseView {
 					'class_used':'left left-lvl3',
 				},
 				{
-					'id_message':'8',
+					'id_message':'9',
 					'sender':'kdabra',
 					'message_title':'<h2>¿Necesito expertos?</h2>',
 					'message':'Por supuesto, te vamos a convertir en uno, pero para utilizar <span class="kdabra">KDABRA</span> no necesitás desarrolladores ni acceder a profesionales de altísimo costo.',
@@ -126,7 +126,7 @@ class MainInputView extends BaseView {
 			<section className="kdabra-app-container">
 			<header>
 				<h1 className="kdabra-app-title">
-					¿Querés que tu negocio destaque en Facebook?
+					¿Querés que tu negocio pase de una empresa obsoleta a una marca destacada?
 				</h1>
 				<h2 className="kdabra-app-subtitle">Usá la comunicación del mañana, hoy.</h2>
 			</header>

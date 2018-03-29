@@ -61,16 +61,6 @@ header {
   margin: 0 auto;
 }
 
-
-@media only screen and (min-width: 900px) 
-{
-  .kdabra-app-button-container {
-    display: inline-block;
-    margin: 0.5em 2em;
-    width: 40%
-  }
-}
-
 .message {
   display: inline-block;
   padding: 1em;
@@ -151,8 +141,8 @@ header {
 
  .left-lvl3 {
   width: 391.8px;
-  height: 160px;
-  padding: 1em 2.3em 0em 2.3em;
+  min-height: 160px;
+  padding: 1em 2.3em 1.8em 2.3em;
  }
  .left-lvl3 p {
    color: #8d847f;
@@ -202,3 +192,12 @@ header {
  	text-align: center;
  	color: #ffffff;
  }
+
+/* *
+ * MOBILE KDABRA CHAT
+ * */
+
+
+@media only screen and (max-width: 768px) 
+{
+}
