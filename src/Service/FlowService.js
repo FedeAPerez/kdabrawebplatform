@@ -44,9 +44,9 @@ export class FlowService {
 					'type_response': 'multiple-selector',
 					'options': [
 						{
-							'label':'Sí',
+							'label':'¡Dale!',
 							'theme':'default',
-							'value':'Sí'
+							'value':'¡Dale!'
 						},
 						{
 							'label':'No, pero Sí',

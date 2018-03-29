@@ -240,5 +240,16 @@ header {
    
      height: 100%;
    }
+   .message right{
+     width: 90%;
+   }
+
+   .kdabra-app-response-container {
+    background-color: white;
+    width: 70%;
+    padding-top: 10px;
+    display: block;
+    margin: 0 auto;
+}
  }
  
