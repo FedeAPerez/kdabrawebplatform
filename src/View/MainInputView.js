@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MessageHandleContainer from '../Container/MessageHandleContainer';
 import MessageContainer from '../Container/MessageContainer';
 import FlowService from '../Service/FlowService';
-
+import UserMessage from '../Base/UserMessage';
 
 class MainInputView extends Component {
 	constructor(props) {
@@ -17,12 +17,10 @@ class MainInputView extends Component {
 	onAnswerSubmit = (text, value, tags) => {
         var current_msg = this.getCurrentMessage();
         
-        this.state.messageList.push({
-            'sender': 'user',
-            'type': 'text',
-            'message': text,
-            'class_used': 'right'
-        });
+        this.state.messageList.push(
+			new UserMessage(text)
+		);
+		
 		this.setState(this.state);
         this.getNextMessage(current_msg, tags);
     }

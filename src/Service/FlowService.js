@@ -1,5 +1,5 @@
+import AuthService from './AuthService';
 export class FlowService {
-
 
 	static GetNextMessage(current_message, form_info) {
 		var messages = [

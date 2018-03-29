@@ -1,14 +1,17 @@
 
-const serviceUrl = process.env.AUTHENTICATION_ENDPOINT.trim() + '/';
+const serviceUrl = 'https://kdabra-auth.herokuapp.com/api/users';
 
 export class AuthService {
 
-    static PostAuthentication(current_message, form_info) {
+    static PostAuthentication() {
 
-        return fetch(serviceUrl + 'flow/next/with_mocks', {
+        return fetch(serviceUrl, {
             'method': 'post',
             'headers': { 'Content-Type': 'application/json' },
-            'body': JSON.stringify({ 'current_message': current_message, 'subscription_info': form_info })
+            'body': JSON.stringify(
+                { 'email': 'fedeaperez@hotmail.com.ar',
+                  'name': 'Federico' }
+                )
         })
             .then((response) => response.json())
             .then((js) => { console.log(js); return js; })
