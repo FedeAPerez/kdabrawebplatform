@@ -1,137 +1,76 @@
-import React from 'react';
-import TextField from 'material-ui/TextField';
-import BaseView from '../Base/BaseView';
+import React, { Component } from 'react';
 import MessageHandleContainer from '../Container/MessageHandleContainer';
 import MessageContainer from '../Container/MessageContainer';
+import FlowService from '../Service/FlowService';
 
-class MainInputView extends BaseView {
+
+class MainInputView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-		
 			'messageList' : [
-				{
-					'id_message':'1',
-					'sender':'kdabra',
-					'message_title':'<h1>¡Hola!</h1>',
-					'message':'<span class="kdabra">KDABRA</span> es la herramienta 100% interactiva que utiliza mensajería para brindar la mejor experiencia a tus usuarios &#x1F60D. Dale a <b>empezar</b> y fijate lo que te podemos ofrecer.',
-					'type':'text',
-					'class_used':'left',
-					'response_expected': {
-						'type_response': 'big-button',
-						'label': 'Empezar',
-						'value': 'ok',
-						'color':'#ff6600',
-						'hover_color':'#ff9966'
-					}
-				},
-				{
-					'id_message':'2',
-					'sender':'user',
-					'message':'<b>¡EMPEZAR!</b>',
-					'class_used':'right',
-					'type':'text'
-				},
-				{
-					'id_message':'3',
-					'sender':'kdabra',
-					'message_title':'<h2>Me gustaría conocer tu nombre.</h2>',
-					'message':'¡Ingresalo en el recuadro de abajo! Es una buena forma de empezar una conversación (o eso me dijeron &#x1F601)',
-					'type':'text',
-					'class_used':'left left-lvl3',
-					'response_expected': {
-						'type_response': 'text-input',
-						'type_expected': 'mail',
-						'label': 'Mail',
-						'value': 'mail',
-						'color':'#ff6600',
-						'hover_color':'#ff9966'
-					}
-				},
-				{
-					'id_message':'4',
-					'sender':'user',
-					'message':'<b>Fede</b>',
-					'class_used':'right',
-					'type':'text'
-				},
-				{
-					'id_message':'5',
-					'sender':'kdabra',
-					'message_title':'<h2>Fede, vamos a darte la mejor opción.</h2>',
-					'message':'Antes de eso nos gustaría contarte un poco más de <span class="kdabra">KDABRA</span> ¿Crees que lo necesitás, o vamos directamente a nuestros planes?',
-					'type':'text',
-					'class_used':'left left-lvl3',
-					'response_expected': {
-						'type_response': 'text-input',
-						'type_expected': 'mail',
-						'label': 'Mail',
-						'value': 'mail',
-						'color':'#ff6600',
-						'hover_color':'#ff9966'
-					}
-				},
-				{
-					'id_message':'6',
-					'sender':'user',
-					'class_used':'right',
-					'message':'¡Conocer más! &#x1F64B'
-				},
-				{
-					'id_message':'7',
-					'sender':'kdabra',
-					'message_title':'<h2>Tu propio bot &#x1F4BB</h2>',
-					'message':'Vas a tener tu ChatBot completamente en nuestra web &#x1F632, al finalizar está conversación vas a poder compartir a tus clientes un link www.gokdabra.com/nombre_de_empresa.',
-					'type':'text',
-					'class_used':'left left-lvl3',
-				},
-				{
-					'id_message':'8',
-					'sender':'kdabra',
-					'message_title':'<h2>¿Un ChatBot?</h2>',
-					'message':'Así es, grandes marcas como Coca-Cola o Johnnie Walker usan intelgencia artificial para mejorar sus conversaciones. Hoy vas a jugar a su altura. &#x1F64C',
-					'type':'text',
-					'class_used':'left left-lvl3',
-				},
-				{
-					'id_message':'9',
-					'sender':'kdabra',
-					'message_title':'<h2>¿Necesito expertos?</h2>',
-					'message':'Por supuesto, te vamos a convertir en uno, pero para utilizar <span class="kdabra">KDABRA</span> no necesitás desarrolladores ni acceder a profesionales de altísimo costo.',
-					'type':'text',
-					'class_used':'left left-lvl3',
-				}/*,
-				{
-					'id_message':'9',
-					'sender':'kdabra',
-					'message_title':'<h2>Fede, selecciona una opción.</h2>',
-					'message':'Estos son nuestros pilares de <b>valor</b>.<br />Los usamos como la base para generar la mejor experiencia para vos y tus clientes.',
-					'type':'text',
-					'class_used':'left left-lvl3',
-					'response_expected': {
-						'type_response': 'text-input',
-						'type_expected': 'mail',
-						'label': 'Mail',
-						'value': 'mail',
-						'color':'#ff6600',
-						'hover_color':'#ff9966'
-					}
-				},*/
 
 			]
 		}
 	}
+
+	onAnswerSubmit = (text, value, tags) => {
+        var current_msg = this.getCurrentMessage();
+        
+        this.state.messageList.push({
+            'sender': 'user',
+            'type': 'text',
+            'message': text,
+            'class_used': 'right'
+        });
+		this.setState(this.state);
+        this.getNextMessage(current_msg, tags);
+    }
+
+	getCurrentMessage() {
+        return this.state.messageList.length
+            ? this.state.messageList[this.state.messageList.length - 1]['id_message']
+            : '';
+    }
+
+    scrollToBottom = () => {
+        if (this.messagesEnd) {
+            this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    componentDidMount() {
+		this.getNextMessage();
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
+    }
+
+
+	getNextMessage(current_msg, vals) {
+		var formInfo = [];
+		
+        var m = FlowService.GetNextMessage(current_msg || this.getCurrentMessage(), vals);
+        this.state.messageList.push(m);
+		this.setState(this.state);
+		if(m.next_message) {
+			this.getNextMessage(this.getCurrentMessage());
+		}
+    }
+
     renderMessages() {
-        return this.state.messageList.length ? (
+        return (
 			<section className="kdabra-app-container">
 			<header>
 				<h1 className="kdabra-app-title">
-					¿Querés que tu negocio pase de una empresa obsoleta a una marca destacada?
+					¿Querés que tu negocio pase de ser una empresa obsoleta a una <b>marca destacada</b>?
 				</h1>
 				<h2 className="kdabra-app-subtitle">Usá la comunicación del mañana, hoy.</h2>
 			</header>
 				{
-					this.state.messageList.map((element, key) => {
+					this.state.messageList.length && this.state.messageList.map((element, key) => {
 
 						return <MessageContainer
 							key={key}
@@ -147,7 +86,7 @@ class MainInputView extends BaseView {
 				<div className="clear">
 								</div>
 			
-			</section>) : null;
+			</section>);
 	}
 	
 	renderAnswerContainer() {
@@ -155,10 +94,10 @@ class MainInputView extends BaseView {
             ? (
 			<div className="kdabra-app-response-container">
 								<MessageHandleContainer
+									key={this.state.messageList.length + 'respuesta_esperada'}
 									type={this.state.messageList[this.state.messageList.length - 1].response_expected.type_response}
 									responseExpected={this.state.messageList[this.state.messageList.length - 1].response_expected}
 									onAnswerSubmit={this.onAnswerSubmit}
-									ref="submitContainer"
 									/>
 				</div>
             )
@@ -174,6 +113,11 @@ class MainInputView extends BaseView {
 					}{
 						this.renderAnswerContainer()
 					} 
+
+					<div
+					    ref={(scrollBo) => { this.messagesEnd = scrollBo; }}
+                	>
+                	</div>
 				</main>
 			);
 		}

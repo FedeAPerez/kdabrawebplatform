@@ -20,17 +20,19 @@ export default class BigButtonContainer extends Component {
 		}
 		
 		return(
-			<FlatButton 
-				id={ this.props.responseExpected.value }
-				value={ this.props.responseExpected.value }
-				label={ this.props.responseExpected.label }
-                backgroundColor={ this.props.responseExpected.color }
-                hoverColor={ this.props.responseExpected.hover_color }
-				onClick={ this.submitMessage.bind(this) }
-				className="big-button"
-                style={ bigButtonStyle } 
-                fullWidth={true}
-			/>
+			<section className="kdabra-app-response-container">
+				<FlatButton 
+					id={ this.props.responseExpected.value }
+					value={ this.props.responseExpected.value }
+					label={ this.props.responseExpected.label }
+					backgroundColor={ this.props.responseExpected.color }
+					hoverColor={ this.props.responseExpected.hover_color }
+					onClick={ this.submitMessage.bind(this) }
+					className="big-button"
+					style={ bigButtonStyle } 
+					fullWidth={true}
+				/>
+			</section>
 		);
 	}
 }

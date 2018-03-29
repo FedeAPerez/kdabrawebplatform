@@ -56,6 +56,7 @@ header {
 
 .kdabra-app-response-container {
   background-color: white;
+  width: 70%;
   padding-top: 10px;
   display: block;
   margin: 0 auto;
@@ -160,13 +161,12 @@ header {
 
  .right {
   float: right;
-  width: 8.5em;
+  min-width: 8.5em;
   height: 3em;
   text-align: center;
   border-radius: 2px;
   padding: 0em 1em;
   background-color: #ff9966;
-  margin-left: 50%;
  }
  .selection-item {
   margin: 1em;
