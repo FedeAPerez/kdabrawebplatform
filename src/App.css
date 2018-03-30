@@ -258,9 +258,8 @@ header {
     height: 20%;
   }
     .left-lvl3 {
-      width: 90%;
-      min-height: 160px;
-      padding: 1em;
+    width: fit-content;
+    padding: 0em 2.3em;
   }
  }
  
