@@ -15,8 +15,8 @@ export default class TextInputContainer extends Component {
     }
 
 	componentDidMount() {
-		if(this.props.principal)
-			this.focusElement.focus();
+		//if(this.props.principal)
+	    //	this.focusElement.focus();
 	}
 
 
