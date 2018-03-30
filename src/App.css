@@ -246,6 +246,9 @@ header {
    .message right{
      width: 90%;
    }
+   .kdabra-app-container {
+     width: 100%;
+   }
 
    .kdabra-app-response-container {
     background-color: white;
