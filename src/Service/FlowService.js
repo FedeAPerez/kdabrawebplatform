@@ -39,7 +39,7 @@ export class FlowService {
 				'id_message':'3',
 				'sender':'kdabra',
 				'message_title':'<h2>{{name}}, vamos a generar tu ChatBot.</h2>',
-				'message':'Antes de eso nos gustaría contarte un poco más de <span class="kdabra">KDABRA</span>. <br />¿Te parece bien?',
+				'message':'Antes hacer tu Bot <b>gratis</b> &#x1f929 nos gustaría contarte un poco más de <span class="kdabra">KDABRA</span>. <br />¿Te parece bien?',
 				'type':'text',
 				'class_used':'left left-lvl3',
 				'scroll':'true',
@@ -65,7 +65,7 @@ export class FlowService {
 				'sender':'kdabra',
 				'message_title':'<h2>Tu propio bot &#x1F4BB</h2>',
 				'scroll':'true',
-				'message':'Vas a tener tu ChatBot completamente en nuestra web &#x1F632, al finalizar está conversación vas a poder compartir a tus clientes un link www.gokdabra.com/nombre_de_empresa.',
+				'message':'Vas a tener tu ChatBot completamente en nuestra web &#x1F632, al terminar esta conversación vas a poder compartir un link que comienza con <b>www.gokdabra.com</b>',
 				'type':'text',
 				'class_used':'left left-lvl3',
 				'next_message':'5'
@@ -75,7 +75,7 @@ export class FlowService {
 				'sender':'kdabra',
 				'scroll':'false',
 				'message_title':'<h2>¿Un ChatBot?</h2>',
-				'message':'Así es, grandes marcas como Coca-Cola o Johnnie Walker usan inteligencia artificial para mejorar sus conversaciones. Hoy vas a jugar a su altura. &#x1F64C',
+				'message':'Así es, grandes marcas usan inteligencia artificial para mejorar sus conversaciones. Hoy vas a jugar a su altura. &#x1F64C',
 				'type':'text',
 				'class_used':'left left-lvl3',
 				'next_message':'6'
@@ -85,7 +85,7 @@ export class FlowService {
 				'sender':'kdabra',
 				'scroll':'false',
 				'message_title':'<h2>¿Necesito expertos?</h2>',
-				'message':'Por supuesto, te vamos a convertir en uno, pero para utilizar <span class="kdabra">KDABRA</span> no necesitás desarrolladores ni acceder a profesionales de altísimo costo.',
+				'message':'Para utilizar <span class="kdabra">KDABRA</span> no necesitás desarrolladores ni acceder a profesionales de alto costo.',
 				'type':'text',
 				'class_used':'left left-lvl3',
 				'next_message':'7'
