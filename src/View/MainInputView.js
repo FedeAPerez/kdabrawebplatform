@@ -10,8 +10,10 @@ class MainInputView extends Component {
 		this.state = {
 			'messageList' : [
 
-			]
+			],
+			'scroll_item' : '1'
 		}
+		
 	}
 
 	onAnswerSubmit = (text, value, tags) => {
@@ -20,7 +22,6 @@ class MainInputView extends Component {
         this.state.messageList.push(
 			new UserMessage(text)
 		);
-		
 		this.setState(this.state);
         this.getNextMessage(current_msg, tags);
     }
@@ -31,34 +32,34 @@ class MainInputView extends Component {
             : '';
     }
 
-    scrollToBottom = () => {
-        if (this.messagesEnd) {
-            this.messagesEnd.scrollIntoView(
-				{
-					behavior: "smooth",
-					alignToTop: false,
-					 
-				});
-        }
-    }
 
     componentDidMount() {
 		this.getNextMessage();
-        this.scrollToBottom();
+
     }
 
     componentDidUpdate() {
-        this.scrollToBottom();
+		if(this[`shouldScroll$`+this.state.scroll_item]) {
+			this[`shouldScroll$`+this.state.scroll_item].scrollIntoView( {
+				behavior: 'smooth'
+			});
+		}
     }
 
 
 	getNextMessage(current_msg, vals) {
         var m = FlowService.GetNextMessage(current_msg || this.getCurrentMessage(), vals);
-        this.state.messageList.push(m);
+		this.state.messageList.push(m);
+
+		if(m.scroll=='true')
+		{
+			this.state.scroll_item = m.id_message;
+		}
 		this.setState(this.state);
 		if(m.next_message) {
 			this.getNextMessage(this.getCurrentMessage());
 		}
+
     }
 
     renderMessages() {
@@ -66,21 +67,31 @@ class MainInputView extends Component {
 			<section className="kdabra-app-container">
 			<header>
 				<h1 className="kdabra-app-title">
-					¿Querés que tu negocio pase de ser una empresa obsoleta a una <b>marca destacada</b>?
+					¿Querés que tu negocio use las mismas herramientas que <b>Coca-Cola</b> y <b>Johnnie Walker</b>?
 				</h1>
 				<h2 className="kdabra-app-subtitle">Usá la comunicación del mañana, hoy.</h2>
 			</header>
 				{
 					this.state.messageList.length && this.state.messageList.map((element, key) => {
+						return (
+							<article className="message-container-article" key={'message_article_'+key}>
+							<MessageContainer
+								key={'shouldScroll$'+key}
+								text={element.message}
+								textTitle={element.message_title}
+								sender={element.sender}
+								type={element.type}
+								className={"kdabra-app-description message " + element.class_used}
+								/>
+							<div 
+								id= {'shouldScroll$' + element.id_message}
+								ref = {(ref) => {
+										this['shouldScroll$' + element.id_message] = ref
+									}}>
+							</div>
+							</article>
+						)
 
-						return <MessageContainer
-							key={key}
-							text={element.message}
-							textTitle={element.message_title}
-							sender={element.sender}
-							type={element.type}
-							className={"kdabra-app-description message " + element.class_used}
-							/>
 					})
 				}
 
@@ -114,11 +125,6 @@ class MainInputView extends Component {
 					}{
 						this.renderAnswerContainer()
 					} 
-
-					<div
-					    ref={(scrollBo) => { this.messagesEnd = scrollBo; }}
-                	>
-                	</div>
 				</main>
 			);
 		}

@@ -8,13 +8,17 @@ export default class MessageContainer extends Component {
     }
 
 
+
+
     render() {
         return(
+            <article>
             <MessageComponent 
                 text={ this.props.text }
 				textTitle= { this.props.textTitle }
                 className={ this.props.className }
             />
+            </article>
         );
     }
 }

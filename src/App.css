@@ -57,12 +57,11 @@ header {
 .kdabra-app-response-container {
   background-color: white;
   width: 70%;
-  padding-top: 10px;
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1em auto;
+  margin: 0.3em auto;
   height: 20%;
 }
 
@@ -233,7 +232,9 @@ header {
 /* *
  * MOBILE KDABRA CHAT
  * */
-
+ .message-container-article{
+   overflow: hidden;
+ }
 
  @media only screen and (max-width: 768px) 
  {
@@ -253,9 +254,8 @@ header {
    .kdabra-app-response-container {
     background-color: white;
     width: 95%;
-    padding-top: 10px;
     display: flex;
-    margin: 1 auto;
+    margin: 0.3em auto;
     align-items: center;
     justify-content: center;
     height: 20%;
