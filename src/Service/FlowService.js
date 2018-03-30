@@ -10,7 +10,7 @@ export class FlowService {
 				'message':'<span class="kdabra">KDABRA</span> es la herramienta 100% interactiva que utiliza mensajería para brindar la mejor experiencia a tus usuarios &#x1F60D. Dale a <b>empezar</b> y fijate lo que te podemos ofrecer.',
 				'type':'text',
 				'class_used':'left',
-				'scroll':'false',
+				'scroll':'true',
 				'response_expected': {
 					'type_response': 'big-button',
 					'label': 'Empezar',
