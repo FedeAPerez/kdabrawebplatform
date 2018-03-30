@@ -39,7 +39,7 @@ export class FlowService {
 				'id_message':'3',
 				'sender':'kdabra',
 				'message_title':'<h2>{{name}}, vamos a generar tu ChatBot.</h2>',
-				'message':'Antes hacer tu Bot <b>gratis</b> &#x1f929 nos gustaría contarte un poco más de <span class="kdabra">KDABRA</span>. <br />¿Te parece bien?',
+				'message':'Antes hacer tu Bot <b>gratis</b> nos gustaría contarte un poco más de <span class="kdabra">KDABRA</span>. <br />¿Te parece bien?',
 				'type':'text',
 				'class_used':'left left-lvl3',
 				'scroll':'true',
@@ -110,8 +110,8 @@ export class FlowService {
 				'id_message':'8',
 				'scroll':'true',
 				'sender':'kdabra',
-				'message_title':'<h2>¡Perfecto!</h2>',
-				'message':'Ya podés ver tu bot en {{link_bot}}<br />',
+				'message_title':'<h2>¡Perfecto! &#x2705</h2>',
+				'message':'Vas a poder ver tu bot en {{link_bot}}<br />',
 				'class_used':'left left-lvl3'
 			}
 		]
