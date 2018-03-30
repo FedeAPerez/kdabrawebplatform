@@ -251,9 +251,16 @@ header {
     background-color: white;
     width: 70%;
     padding-top: 10px;
-    display: block;
+    display: flex;
     margin: 1 auto;
+    align-items: center;
+    justify-content: center;
     height: 20%;
+  }
+    .left-lvl3 {
+      width: 90%;
+      min-height: 160px;
+      padding: 1em;
   }
  }
  
