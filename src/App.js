@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { grey900, deepOrange400 } from 'material-ui/styles/colors';
+import { grey900, indigo800 } from 'material-ui/styles/colors';
 import './App.css';
 import MainInputView from './View/MainInputView'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -7,7 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: deepOrange400,
+    primary1Color: indigo800,
     textColor: grey900,
   }
 });

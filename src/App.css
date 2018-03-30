@@ -59,23 +59,23 @@ header {
   width: 70%;
   padding-top: 10px;
   display: block;
-  margin: 0 auto;
+  margin: 1em auto;
+  height: 20%;
 }
 
 .message {
   display: inline-block;
   padding: 1em;
-  border-radius: 2px;
+  border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   margin: 1em;
-  background-color: white;
+  color: #E8EAF6;
 }
 .message .kdabra {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  color: black;
 }
 
 .message b {
@@ -89,7 +89,6 @@ header {
   line-height: 0.8;
   letter-spacing: normal;
   text-align: left;
-  color: #33281a;
   margin: 0.9em 0em;
  }
  .message h2 {
@@ -99,7 +98,6 @@ header {
   line-height: 1.6;
   letter-spacing: normal;
   text-align: left;
-  color: #33281a;
  }
 
  .message h3 {
@@ -111,7 +109,6 @@ header {
   line-height: 1.5;
   letter-spacing: normal;
   text-align: left;
-  color: #8d847f;
  }
 
  .right p {
@@ -123,7 +120,6 @@ header {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
  }
 
  .left {
@@ -137,16 +133,13 @@ header {
   font-stretch: normal;
   line-height: 1.5;
   letter-spacing: normal;
-  color: #33281a;
+  color: black;
  }  
 
  .left-lvl3 {
   width: 391.8px;
   min-height: 160px;
   padding: 1em 2.3em 1.8em 2.3em;
- }
- .left-lvl3 p {
-   color: #8d847f;
  }
 
  .left-lvl3-solo {
@@ -166,7 +159,7 @@ header {
   text-align: center;
   border-radius: 8px;
   padding: 0em 1em;
-  background-color: #ff9966;
+  background-color: #1565C0;
  }
  .selection-item {
   margin: 1em;
@@ -217,12 +210,12 @@ header {
 
 .selector-default {
 	color: #ffffff;
-	background-image: linear-gradient(253deg, #ff7519, #ff6600);
+	background-color: #3949AB;
 }
 
 .selector-secondary {
-	color: #ff9966;
-	border: solid 2px #f3f3f3;
+	color: #3949AB;
+	border: solid 2px #3F51B5;
 }
 
 
@@ -249,7 +242,8 @@ header {
     width: 70%;
     padding-top: 10px;
     display: block;
-    margin: 0 auto;
-}
+    margin: 1 auto;
+    height: 20%;
+  }
  }
  

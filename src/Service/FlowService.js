@@ -14,8 +14,8 @@ export class FlowService {
 					'type_response': 'big-button',
 					'label': 'Empezar',
 					'value': 'ok',
-					'color':'#ff6600',
-					'hover_color':'#ff9966'
+					'color':'#3949AB',
+					'hover_color':'#5C6BC0'
 				}
 			},
 			{
