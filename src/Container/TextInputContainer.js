@@ -36,6 +36,8 @@ export default class TextInputContainer extends Component {
         var valorFinal;
         if(this.props.responseExpected.first_mask) {
             valorFinal = !this.state.dirty ? this.props.responseExpected.first_mask + e.target.value : e.target.value;
+            if(!valorFinal.includes(this.props.responseExpected.first_mask))
+                return false;
             this.setState(
                 {
                     value: valorFinal,

@@ -58,7 +58,10 @@ header {
   background-color: white;
   width: 70%;
   padding-top: 10px;
-  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 1em auto;
   height: 20%;
 }
@@ -189,7 +192,7 @@ header {
 
 .selector {
   cursor: pointer;
-  margin: 0 0.3em;
+  margin: 0 1em;
 	width: 155px;
 	height: 42px;
 	border-radius: 6px;
@@ -201,7 +204,14 @@ header {
 	line-height: normal;
 	letter-spacing: normal;
 	display: inline-block;
-	text-align: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.selector p {
+  margin: 0;
+  padding: 0;
 }
 
 .selector span {

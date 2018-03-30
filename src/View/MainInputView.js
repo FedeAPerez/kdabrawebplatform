@@ -33,7 +33,12 @@ class MainInputView extends Component {
 
     scrollToBottom = () => {
         if (this.messagesEnd) {
-            this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+            this.messagesEnd.scrollIntoView(
+				{
+					behavior: "smooth",
+					alignToTop: false,
+					 
+				});
         }
     }
 
