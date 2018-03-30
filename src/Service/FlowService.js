@@ -14,7 +14,7 @@ export class FlowService {
 				'response_expected': {
 					'type_response': 'big-button',
 					'label': 'Empezar',
-					'value': 'ok',
+					'value': 'start',
 					'color':'#3949AB',
 					'hover_color':'#5C6BC0'
 				}
@@ -30,6 +30,7 @@ export class FlowService {
 				'response_expected': {
 					'type_response': 'text-input',
 					'label': 'Nombre',
+					'value':'name',
 					'id_tag': '{{name}}',
 					'mask':'Juán'
 					
@@ -49,12 +50,12 @@ export class FlowService {
 						{
 							'label':'¡Dale!',
 							'theme':'default',
-							'value':'¡Dale!'
+							'value':'dale'
 						},
 						{
 							'label':'No, pero Sí',
 							'theme':'secondary',
-							'value':'No, pero Sí'
+							'value':'dale'
 						}
 					]
 					
@@ -112,7 +113,8 @@ export class FlowService {
 				'sender':'kdabra',
 				'message_title':'<h2>¡Perfecto! &#x2705</h2>',
 				'message':'Vas a poder ver tu bot en {{link_bot}}<br />',
-				'class_used':'left left-lvl3'
+				'class_used':'left left-lvl3',
+				'finish_form':'true'
 			}
 		]
 		var messageToReturn = messages[current_message || 0];

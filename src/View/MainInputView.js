@@ -16,14 +16,45 @@ class MainInputView extends Component {
 		
 	}
 
+	onFinishForm() {
+		var userInteraction = [];
+		for(var i = 0; i < this.state.messageList.length; i++){
+			if(this.state.messageList[i].sender == 'user') 
+				userInteraction.push(this.state.messageList[i]);
+		}
+		//console.log(JSON.stringify(userInteraction));
+	}
+
+	getNextMessage(current_msg, vals) {
+        var m = FlowService.GetNextMessage(current_msg || this.getCurrentMessage(), vals);
+		this.state.messageList.push(m);
+
+		if(m.scroll=='true')
+		{
+			this.state.scroll_item = m.id_message;
+		}
+
+		this.setState(this.state);
+
+		if(m.next_message)
+			this.getNextMessage(this.getCurrentMessage());
+
+		if(m.finish_form == 'true')
+			this.onFinishForm();
+
+
+	}
+	
 	onAnswerSubmit = (text, value, tags) => {
         var current_msg = this.getCurrentMessage();
         
         this.state.messageList.push(
-			new UserMessage(text)
+			new UserMessage(text, value)
 		);
 		this.setState(this.state);
-        this.getNextMessage(current_msg, tags);
+
+		this.getNextMessage(current_msg, tags);
+
     }
 
 	getCurrentMessage() {
@@ -47,20 +78,7 @@ class MainInputView extends Component {
     }
 
 
-	getNextMessage(current_msg, vals) {
-        var m = FlowService.GetNextMessage(current_msg || this.getCurrentMessage(), vals);
-		this.state.messageList.push(m);
 
-		if(m.scroll=='true')
-		{
-			this.state.scroll_item = m.id_message;
-		}
-		this.setState(this.state);
-		if(m.next_message) {
-			this.getNextMessage(this.getCurrentMessage());
-		}
-
-    }
 
     renderMessages() {
         return (

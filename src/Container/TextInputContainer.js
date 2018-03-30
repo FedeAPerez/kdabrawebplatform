@@ -27,7 +27,7 @@ export default class TextInputContainer extends Component {
                     tag: this.props.responseExpected.id_tag,
                     value: this.state.value
                 });
-                this.props.closeInput(this.state.value, this.state.value, tags);
+                this.props.closeInput(this.state.value, this.props.responseExpected.value, tags);
             }
 	}
 
